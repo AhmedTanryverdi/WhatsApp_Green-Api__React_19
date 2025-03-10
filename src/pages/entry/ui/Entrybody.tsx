@@ -17,6 +17,11 @@ export const Entrybody: React.FC = (): React.JSX.Element => {
 		}
 
 		getQr(url);
+		const intervalId = setInterval(() => {
+			getQr(url);
+		}, 21000);
+
+		return () => clearInterval(intervalId);
 	}, [qr]);
 
 	return (
