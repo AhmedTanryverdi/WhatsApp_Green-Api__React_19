@@ -11,6 +11,7 @@
 	.content {
 		margin: 0 auto;
 		width: 978px;
+		padding: 60px 68px;
 		@include flex(row, center, center);
 		margin-top: 22px;
 		border: 1px solid #000;
@@ -21,9 +22,28 @@
 		}
 
 		.content_right {
-			width: 300px;
-			height: 500px;
-			background-color: royalblue;
+			margin-left: 30px;
+			@include flex(column, space-between, space-between);
+
+			.form {
+				label {
+					@include flex(column, flex-start, flex-start);
+
+					div {
+						@include flex(row, flex-start, center);
+						column-gap: 5px;
+
+						input {
+							width: 18px;
+							height: 18px;
+						}
+
+						input[type="checkbox"] {
+							accent-color: $primary-text-color;
+						}
+					}
+				}
+			}
 		}
 	}
 }
