@@ -1,0 +1,17 @@
+@import "../../../../shared/styles/tools.scss";
+
+.download_btn {
+    border: 1px solid #000;
+    border-radius: 26px;
+    background-color: rgb(37, 211, 102);
+
+	button {
+		width: 162px;
+		height: 52px;
+		@include flex(row, space-around, center);
+		padding: 10px 24px;
+        border: none;
+        background-color: transparent;
+        font-size: 16px;
+	}
+}

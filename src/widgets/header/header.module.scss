@@ -1,24 +1,16 @@
-.header{
-    width: 100%;
-    .container{
-        width: 1320px;
-        margin: 0 auto;
-    }
+@import "../../shared/styles/tools.scss";
 
-    &__header{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+.header {
+	width: 100%;
+    height: 74px;
+    
+	.container {
+		width: 1320px;
+		margin: 0 auto;
+	}
 
-        .logo, .dowload_btn{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        img{
-            width: 40px;
-            height: 40px;
-        }
-    }
+	&__header {
+        height: 74px;
+		@include flex(row, space-between, center);
+	}
 }

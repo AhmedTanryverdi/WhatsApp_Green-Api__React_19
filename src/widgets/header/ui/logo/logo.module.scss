@@ -1,0 +1,16 @@
+@import "../../../../shared/styles/tools.scss";
+
+.logo {
+	@include flex(flex, center, center);
+	padding: 10px 24px;
+    
+	svg {
+		margin-right: 6px;
+	}
+
+	.title {
+		color: $primary-text-olor;
+		font-size: 18px;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+}

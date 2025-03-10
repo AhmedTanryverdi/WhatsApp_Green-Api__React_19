@@ -1,0 +1,36 @@
+@import '../../../../../shared/styles/tools.scss';
+
+.manual {
+	margin-top: 32px;
+	counter-reset: number;
+
+	ul {
+		@include flex(column, flex-start, flex-start);
+		row-gap: 24px;
+
+		li {
+			width: 565px;
+			font-size: 18px;
+            list-style-position: inside;
+
+			span {
+				width: 18px;
+				height: 24px;
+				padding: 5px;
+
+				svg {
+					border: 1px solid #000;
+					border-radius: 7px;
+				}
+			}
+		}
+	}
+
+	li::before {
+		counter-increment: number;
+		content: counter(number) ".";
+		display: inline-block;
+		width: 20px;
+		height: 24px;
+	}
+}

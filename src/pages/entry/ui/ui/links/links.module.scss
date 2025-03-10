@@ -1,0 +1,23 @@
+@import "../../../../../shared/styles/tools.scss";
+
+.links {
+	margin-top: 20px;
+	@include flex(column);
+	row-gap: 10px;
+
+	a {
+		@include flex(row, center, center);
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 16px;
+		color: rgb(17, 27, 33);
+		text-decoration: underline 2px $primary-text-olor;
+		text-underline-offset: 5px;
+	}
+
+	a:first-child {
+		svg {
+			transform: rotate(-45deg);
+		}
+	}
+}
