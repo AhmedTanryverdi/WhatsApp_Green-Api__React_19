@@ -6,7 +6,7 @@ type NumberType = {
 }
 
 const initialState: NumberType = {
-    isNumber: true
+    isNumber: false
 }
 
 const onNumberSlice = createSlice({

@@ -13,8 +13,8 @@ export const Entry: React.FC = (): React.JSX.Element => {
 	const statusAuth = useSelector<RootState, Object>(
 		(state) => state.user.statusAuth
 	);
-
 	const navigate = useNavigate();
+
 	useEffect(() => {
 		const url = `${apiUrl}/waInstance${idInstance}/getStateInstance/${apiTokenInstance}`;
 		dispatch(getStatusAuth(url));
@@ -28,9 +28,7 @@ export const Entry: React.FC = (): React.JSX.Element => {
 	}
 
 	return (
-		<div className={style.entry} style={{
-			backgroundColor: ""
-		}}>
+		<div className={style.entry}>
 			<Header />
 			<Entrybody />
 		</div>

@@ -1,9 +1,9 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Country } from "./ui/country/Country";
 import style from "./entrynumber.module.scss";
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "../../../../../app/redux/store";
+import { useAppDispatch } from "../../../../../app/redux/store";
 import { setStatusNumber } from "../../../../../entities/model/slices/onnumber/OnNumber";
+import { getCountries } from "../../../../../features/utils/functions";
 
 type CountryType = {
 	name: {
@@ -26,16 +26,13 @@ export const EntryNumber: React.FC = (): React.JSX.Element => {
 
 	const [id, setId] = useState<number>(104);
 
-	const isNumber = useSelector<RootState, boolean>(state=>state.onNumber.isNumber);
 	const dispatch = useAppDispatch();
 
 	useEffect(() => {
-		fetch("https://restcountries.com/v3.1/all")
-			.then((res) => res.json())
-			.then((data) => {
-				setCountries(data);
-			})
-			.catch((error) => console.log(error));
+		const url = "https://restcountries.com/v3.1/all";
+		const data = getCountries(url);
+		data.then((result) => setCountries(result));
+		
 	}, []);
 
 	const statusList = () => {
@@ -44,12 +41,11 @@ export const EntryNumber: React.FC = (): React.JSX.Element => {
 
 	useEffect(() => {
 		setOpenList(!isOpenList);
-		console.log("[id]: ", id);
 	}, [id]);
 
-	const handleChangeNumber = ()=>{
+	const handleChangeNumber = () => {
 		dispatch(setStatusNumber(false));
-	}
+	};
 
 	return (
 		<div className={style.entrynumber}>

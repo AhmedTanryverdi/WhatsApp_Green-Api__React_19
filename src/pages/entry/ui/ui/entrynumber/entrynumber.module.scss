@@ -46,6 +46,11 @@
 				svg {
 					transform: rotate(90deg);
 				}
+
+				&:hover{
+					background-color: transparent;
+					
+				}
 			}
 
 			.country_list {

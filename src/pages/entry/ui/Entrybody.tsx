@@ -7,6 +7,7 @@ import { apiUrl, idInstance, apiTokenInstance } from "../../../shared";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../app/redux/store";
 import { EntryNumber } from "./ui/entrynumber/EntryNumber";
+import { getQr } from "../../../features/utils/functions";
 
 export const Entrybody: React.FC = (): React.JSX.Element => {
 	const [qr, setQr] = useState<any>();
@@ -17,20 +18,17 @@ export const Entrybody: React.FC = (): React.JSX.Element => {
 
 	useEffect(() => {
 		const url = `${apiUrl}/waInstance${idInstance}/qr/${apiTokenInstance}`;
-		async function getQr(url: string) {
-			const response = await fetch(url);
-			const data = await response.json();
-			setQr(data);
-		}
+		
+		const data = getQr(url);
+		data.then((result) => setQr(result));
 
 		const intervalId = setInterval(() => {
-			getQr(url);
+			const data = getQr(url);
+			data.then((result) => setQr(result));
 		}, 21000);
 
 		if (isNumber) {
 			clearInterval(intervalId);
-		} else {
-			getQr(url);
 		}
 
 		return () => clearInterval(intervalId);
