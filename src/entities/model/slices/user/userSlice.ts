@@ -31,9 +31,6 @@ type UserType = {
 		status: string;
 		code: string;
 	};
-	apiUrl: string;
-	idInstance: string;
-	apiTokenInstance: string;
 };
 
 const initialState: UserType = {
@@ -42,9 +39,6 @@ const initialState: UserType = {
 		status: "",
 		code: "",
 	},
-	apiUrl: "",
-	idInstance: "",
-	apiTokenInstance: "",
 };
 
 const userSlice = createSlice({
@@ -56,16 +50,15 @@ const userSlice = createSlice({
 		},
 	},
 
-	extraReducers: builder=>{
-		builder
-			.addCase(getAuthCode.fulfilled, (state, actions)=>{
-				state.auth = actions.payload
-			});
+	extraReducers: (builder) => {
+		builder.addCase(getAuthCode.fulfilled, (state, actions) => {
+			state.auth = actions.payload;
+		});
 
 		builder.addCase(getStatusAuth.fulfilled, (state, actions) => {
 			state.statusAuth = actions.payload;
 		});
-	}
+	},
 });
 
 export const { setState } = userSlice.actions;

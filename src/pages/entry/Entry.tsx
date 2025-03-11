@@ -20,7 +20,6 @@ export const Entry: React.FC = (): React.JSX.Element => {
 		dispatch(getStatusAuth(url));
 
 		const intervalId = setInterval(()=>dispatch(getStatusAuth(url)), 2500);
-		console.log("[intervalId]: ", statusAuth);
 		return ()=> clearInterval(intervalId);
 	}, [statusAuth]);
 
@@ -29,7 +28,9 @@ export const Entry: React.FC = (): React.JSX.Element => {
 	}
 
 	return (
-		<div className={style.entry}>
+		<div className={style.entry} style={{
+			backgroundColor: ""
+		}}>
 			<Header />
 			<Entrybody />
 		</div>

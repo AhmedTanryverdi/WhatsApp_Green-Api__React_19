@@ -1,0 +1,108 @@
+@import "../../../../../shared/styles/tools.scss";
+
+.entrynumber {
+	width: 100%;
+	text-align: center;
+
+	.container {
+		margin: 0 auto;
+		text-align: center;
+
+		.title {
+			font-size: 32px;
+			font-weight: 500;
+			margin-bottom: 10px;
+			color: rgb(17, 27, 33);
+		}
+
+		.subtitle {
+			font-size: 18px;
+			margin-bottom: 32px;
+			color: rgb(17, 27, 33);
+		}
+
+		.countries {
+			width: 320px;
+			margin: 0 auto;
+			padding: 10px 24px;
+			border: 1px solid #000;
+			border-radius: 24px;
+
+			.current_country {
+				height: 20px;
+				@include flex(row, flex-start, center);
+				column-gap: 10px;
+				position: relative;
+				img {
+					width: 20px;
+					height: 20px;
+				}
+
+				span {
+					flex: 1;
+					text-align: left;
+				}
+
+				svg {
+					transform: rotate(90deg);
+				}
+			}
+
+			.country_list {
+				width: 300px;
+				height: 270px;
+				top: -20px;
+				padding: 5px 16px;
+				overflow-y: auto;
+				scrollbar-width: thin;
+				position: absolute;
+				background-color: #fff;
+				border-radius: 24px;
+				box-shadow: 0 0 15px 2px grey;
+			}
+		}
+
+		form {
+			margin-top: 30px;
+			@include flex(column, center, center);
+			row-gap: 50px;
+			label {
+				padding: 10px 24px;
+				border: 1px solid #000;
+				border-radius: 24px;
+
+				.number {
+					width: 255px;
+					border: none;
+					flex: 1;
+					border: none;
+					outline: none;
+					font-size: 16px;
+					padding-left: 8px;
+				}
+			}
+
+			button{
+				padding: 10px 24px;
+				background-color: rgb(0, 128, 105);
+				border-radius: 24px;
+				border: 1px solid rgba(0, 0, 0, 0);
+				font-size: 14px;
+				font-weight: 500;
+				color: rgb(255, 255, 255);
+			}
+		}
+
+		.toQr{
+			display: inline-block;
+			margin-top: 40px;
+			cursor: pointer;
+			text-decoration: underline;
+			text-decoration-color: $primary-text-color;
+			text-decoration-thickness: 2px;
+			text-underline-offset: 3px;
+			@include flex(row, center);
+			column-gap: 5px;
+		}
+	}
+}
