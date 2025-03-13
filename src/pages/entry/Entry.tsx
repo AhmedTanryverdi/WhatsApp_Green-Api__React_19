@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 export const Entry: React.FC = (): React.JSX.Element => {
 	const dispatch = useAppDispatch();
-	const statusAuth = useSelector<RootState, Object>(
+	const statusAuth = useSelector<RootState, string>(
 		(state) => state.user.statusAuth
 	);
 	const navigate = useNavigate();

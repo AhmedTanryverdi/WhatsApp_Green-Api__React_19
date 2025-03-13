@@ -15,6 +15,12 @@
 		text-underline-offset: 5px;
 	}
 
+	a:last-child{
+		svg{
+			margin-top: 5px;
+		}
+	}
+
 	a:first-child {
 		svg {
 			transform: rotate(-45deg);

@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { setStatusNumber } from "../../../../../entities/model/slices/onnumber/OnNumber";
 import { useAppDispatch } from "../../../../../app/redux/store";
 import style from "./links.module.scss";
 
-export const Links: React.FC = (): React.JSX.Element => {
+export const Links: React.FC<{item: string}> = ({item}): React.JSX.Element => {
 	const dispatch = useAppDispatch();
 
 	return (
@@ -36,7 +36,7 @@ export const Links: React.FC = (): React.JSX.Element => {
 			</Link>
 
 			<Link to={"/"} onClick={() => dispatch(setStatusNumber(true))}>
-				Войти по номеру телефона
+				{item}
 				<span>
 					<svg
 						viewBox="0 0 30 30"

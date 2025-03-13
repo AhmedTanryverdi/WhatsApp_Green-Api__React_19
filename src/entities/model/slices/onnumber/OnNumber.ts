@@ -1,12 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { NumberType } from "../../../../shared/assets/types/types";
 
-
-type NumberType = {
-    isNumber: boolean;
-}
 
 const initialState: NumberType = {
-    isNumber: false
+    isNumber: true
 }
 
 const onNumberSlice = createSlice({

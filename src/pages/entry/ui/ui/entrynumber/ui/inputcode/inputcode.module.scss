@@ -1,0 +1,52 @@
+@import "../../../../../../../shared/styles/tools.scss";
+
+.inputCode {
+	width: 100%;
+	.container {
+		@include flex(column);
+		text-align: left;
+
+		.header {
+			.title {
+				font-size: 32px;
+				font-weight: 500;
+				margin-bottom: 10px;
+			}
+
+			p {
+				color: rgb(59, 74, 84);
+				font-size: 16px;
+				color: rgb(17, 27, 33);
+                height: 53px;
+			}
+		}
+
+		.code {
+			width: 840px;
+			margin: 0 auto;
+            padding: 24px 0;
+			background-color: rgb(244, 244, 244);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+
+			ul {
+				display: inline-flex;
+                margin: 0 auto;
+
+				li {
+					width: 44px;
+					height: 50px;
+					border: 1px solid #000;
+					margin: 0 4px;
+					padding: 13px 0;
+					border-radius: 8px;
+                    @include flex(row, center, center);
+                    font-weight: bold;
+                    font-size: 22px;
+                    color: rgb(59, 74, 84);
+				}
+			}
+		}
+	}
+}

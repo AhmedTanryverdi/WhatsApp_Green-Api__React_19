@@ -1,13 +1,13 @@
 import React from "react";
 import style from './manual.module.scss';
 
-export const Manual: React.FC = (): React.JSX.Element => {
+export const Manual: React.FC<{text: string}> = ({text}): React.JSX.Element => {
 	return (
 		<div className={style.manual}>
 			<ul>
 				<li>Откройте WhatsApp на своём телефоне</li>
 				<li>
-					Нажмите <strong>"Меню" </strong>{" "}
+					Нажмите <strong>"Меню" </strong>
 					<span>
 						<svg
 							viewBox="0 0 24 24"
@@ -56,8 +56,7 @@ export const Manual: React.FC = (): React.JSX.Element => {
 				</li>
 				<li>
 					<span>
-						Наведите телефон на этот экран, чтобы отсканировать
-						QR-код
+						{text}
 					</span>
 				</li>
 			</ul>

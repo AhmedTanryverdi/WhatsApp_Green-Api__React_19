@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
-import style from "./entrybody.module.scss";
 import { Title } from "./ui/title/Title";
 import { Manual } from "./ui/manual/Manual";
 import { Links } from "./ui/links/Links";
-import { apiUrl, idInstance, apiTokenInstance } from "../../../shared";
+import { urlQr } from "../../../shared";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../app/redux/store";
 import { EntryNumber } from "./ui/entrynumber/EntryNumber";
 import { getQr } from "../../../features/utils/functions";
+import style from "./entrybody.module.scss";
+
+
+let intervalID: any = null;
 
 export const Entrybody: React.FC = (): React.JSX.Element => {
 	const [qr, setQr] = useState<any>();
@@ -17,21 +20,23 @@ export const Entrybody: React.FC = (): React.JSX.Element => {
 	);
 
 	useEffect(() => {
-		const url = `${apiUrl}/waInstance${idInstance}/qr/${apiTokenInstance}`;
-		
-		const data = getQr(url);
+		const data = getQr(urlQr);
 		data.then((result) => setQr(result));
+	}, []);
 
-		const intervalId = setInterval(() => {
-			const data = getQr(url);
-			data.then((result) => setQr(result));
-		}, 21000);
-
-		if (isNumber) {
-			clearInterval(intervalId);
+	useEffect(() => {
+		if (!intervalID) {
+			intervalID = setInterval(() => {
+				const data = getQr(urlQr);
+				data.then((result) => setQr(result));
+			}, 21000);
 		}
 
-		return () => clearInterval(intervalId);
+		if (isNumber) {
+			clearInterval(intervalID);
+		}
+
+		return () => clearInterval(intervalID);
 	}, [qr, isNumber]);
 
 	return (
@@ -44,8 +49,10 @@ export const Entrybody: React.FC = (): React.JSX.Element => {
 						<>
 							<div className={style.content_left}>
 								<Title />
-								<Manual />
-								<Links />
+								<Manual
+									text="Наведите телефон на этот экран, чтобы отсканировать QR-код"
+								/>
+								<Links item="Войти по номеру телефона"/>
 							</div>
 							<div className={style.content_right}>
 								<form action="" className={style.form}>
