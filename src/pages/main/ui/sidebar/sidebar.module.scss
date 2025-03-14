@@ -1,0 +1,11 @@
+@import "../../../../shared/styles/tools.scss";
+
+.sidebar {
+	width: 391px;
+
+	.content {
+		padding: 0 10px 0 16px;
+		@include flex(row, flex-start, center);
+
+	}
+}
