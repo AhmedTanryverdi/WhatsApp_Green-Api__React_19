@@ -2,10 +2,10 @@
 
 .chatlist {
 	width: 391px;
-	
+
 	.content {
 		width: 100%;
-		
+
 		.searchChat {
 			height: 49px;
 			padding: 0 12px;
@@ -36,7 +36,7 @@
 			}
 		}
 
-		.chatItems{
+		.chatItems {
 			height: calc(100vh - 115px);
 			overflow-y: scroll;
 			scrollbar-width: thin;

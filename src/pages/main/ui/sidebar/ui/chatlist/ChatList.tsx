@@ -65,7 +65,7 @@ export const ChatList: React.FC = (): React.JSX.Element => {
 							{chatID.map((chat, index) => {
 								return (
 									<ChatItem
-										number={chat.chatId.slice(0, -5)}
+										number={chat.chatId}
 										timestamp={chat.timestamp}
 										textMessage={chatID[index].textMessage}
 										key={index}

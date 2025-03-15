@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { setStatusNumber } from "../../../../../entities/model/slices/onnumber/OnNumber";
+import { setStatusNumber } from "../../../../../entities/model/slices/onnumber/onNumber";
 import { useAppDispatch } from "../../../../../app/redux/store";
 import style from "./links.module.scss";
 
-export const Links: React.FC<{item: string}> = ({item}): React.JSX.Element => {
+export const Links: React.FC<{ item: string }> = ({
+	item,
+}): React.JSX.Element => {
 	const dispatch = useAppDispatch();
 
 	return (

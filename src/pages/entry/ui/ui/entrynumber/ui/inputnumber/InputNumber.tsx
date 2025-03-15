@@ -1,6 +1,6 @@
 import React, { useActionState, useEffect, useRef, useState } from "react";
 import { useAppDispatch } from "../../../../../../../app/redux/store";
-import { setStatusNumber } from "../../../../../../../entities/model/slices/onnumber/OnNumber";
+import { setStatusNumber } from "../../../../../../../entities/model/slices/onnumber/onNumber";
 import { Country } from "../country/Country";
 import {
 	CountryType,
@@ -11,8 +11,6 @@ import { checkNumber, validationForm } from "../../utils/funtions";
 import { getAuthCode } from "../../../../../../../entities/model/slices/user/userSlice";
 import { urlGetAuthCode } from "../../../../../../../shared/assets/constants/constans";
 import style from "./inputnumber.module.scss";
-
-
 
 export const InputNumber: React.FC = (): React.JSX.Element => {
 	const [countries, setCountries] = useState<CountryType[]>([]);

@@ -1,15 +1,21 @@
 import React from "react";
 import avatar from "../../../../../../../../shared/assets/icons/user.png";
 import style from "./chatitem.module.scss";
-//import { urlAvatar } from "../../../../../../../../shared/assets/constants/constans";
+import { useAppDispatch } from "../../../../../../../../app/redux/store";
+import { getChatHistory } from "../../../../../../../../entities/model/slices/chatHistory/chatHistory";
+import { urlChatHistory } from "../../../../../../../../shared/assets/constants/constans";
 
 export const ChatItem: React.FC<{
 	number: string;
 	textMessage: string;
 	timestamp: number;
 }> = ({ number, textMessage, timestamp }): React.JSX.Element => {
+
+	const dispatch = useAppDispatch();
 	return (
-		<li className={style.chatitem}>
+		<li className={style.chatitem} onClick={()=>{
+			dispatch(getChatHistory({url: urlChatHistory, chatid: number}))
+		}}>
 			<button className={style.content}>
 				<div className={style.avatar}>
 					<img
@@ -22,7 +28,7 @@ export const ChatItem: React.FC<{
 				<div className={style.inner}>
 					<div className={style.aboutChat}>
 						<div className={style.about}>
-							<p className={style.name}>{number}</p>
+							<p className={style.name}>{number.slice(0, -5)}</p>
 							<p className={style.data}>
 								{new Date(timestamp).getDay().toString() +
 									":" +
