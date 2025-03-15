@@ -33,3 +33,27 @@ export type AuthType = {
 	status: string;
 	code: string;
 };
+
+export type ChatType = {
+	type: string;
+	idMessage: string;
+	timestamp: number;
+	typeMessage: string;
+	textMessage: string;
+	chatId: string;
+	downloadUrl: string;
+	caption: string;
+	fileName: string;
+	jpegThumbnail: string;
+	mimeType: string;
+	isAnimated: boolean;
+	isForwarded: boolean;
+	forwardingScore: number;
+	statusMessage: string;
+	sendByApi: boolean;
+	editedMessageId: string;
+	deletedMessageId: string;
+	videoNote: boolean;
+	isEdited: boolean;
+	isDeleted: boolean;
+};

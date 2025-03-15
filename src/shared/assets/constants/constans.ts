@@ -8,4 +8,4 @@ export const urlQr = `${apiUrl}/waInstance${idInstance}/qr/${apiTokenInstance}`;
 
 export const urlGetAuthCode = `${apiUrl}/waInstance${idInstance}/getAuthorizationCode/${apiTokenInstance}`;
 
-
+export const urlAvatar = `${apiUrl}/waInstance${idInstance}/getAvatar/${apiTokenInstance}`;

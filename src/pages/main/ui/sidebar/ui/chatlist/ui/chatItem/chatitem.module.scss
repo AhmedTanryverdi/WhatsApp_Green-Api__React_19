@@ -1,15 +1,24 @@
 @import "../../../../../../../../shared/styles/tools.scss";
 
 .chatitem {
-	//background-color: aqua;
+	border-top: 1px solid rgb(59, 74, 84, 0.4);
+
+	&:hover {
+		background-color: rgb(59, 74, 84, 0.1);
+	}
 
 	.content {
 		height: 73px;
 		@include flex(row, flex-start, center);
+		border: none;
+		background-color: transparent;
+		&:focus {
+			background-color: rgb(59, 74, 84, 0.2);
+		}
+
 		.avatar {
 			width: 77px;
 			height: 100%;
-			//background-color: orangered;
 			@include flex(row, center, center);
 			img {
 				width: 49px;
@@ -23,34 +32,37 @@
 			width: 303px;
 			height: 72px;
 			@include flex(row, flex-start, center);
-			//background-color: blueviolet;
 
 			.aboutChat {
 				width: 100%;
 				.about {
 					width: 100%;
-					//background-color: burlywood;
 					@include flex(row, flex-start, center);
 					.name {
 						flex: 1;
 						height: 22px;
 						@include flex(row, flex-start, center);
-                        color: rgb(17, 27, 33);
-                        font-family: sans-serif;
-                        font-size: 17px;
+						color: rgb(17, 27, 33);
+						font-family: sans-serif;
+						font-size: 17px;
 					}
 
-                    .data{
-                        font-size: 12px;
-                        font-family: sans-serif;
-                    }
+					.data {
+						font-size: 12px;
+						font-family: sans-serif;
+						padding-right: 15px;
+					}
 				}
 			}
 			.lastMessage {
+				width: 100%;
 				height: 20px;
-                @include flex(row, flex-start, center);
-                font-size: 14px;
-                font-family: sans-serif;
+				font-size: 14px;
+				font-family: sans-serif;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				overflow: hidden;
+				text-align: left;
 			}
 		}
 	}

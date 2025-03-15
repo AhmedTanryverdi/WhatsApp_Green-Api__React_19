@@ -2,10 +2,10 @@
 
 .sidebar {
 	width: 391px;
+	max-height: 100vh;
 
 	.content {
 		padding: 0 10px 0 16px;
-		@include flex(row, flex-start, center);
-
+		@include flex(column, flex-start, center);
 	}
 }
