@@ -2,7 +2,7 @@ import React from "react";
 import avatar from "../../../../../../../../shared/assets/icons/user.png";
 import style from "./chatitem.module.scss";
 import { useAppDispatch } from "../../../../../../../../app/redux/store";
-import { getChatHistory } from "../../../../../../../../entities/model/slices/chatHistory/chatHistory";
+import { getChatHistory, setChatId } from "../../../../../../../../entities/model/slices/chatHistory/chatHistory";
 import { urlChatHistory } from "../../../../../../../../shared/assets/constants/constans";
 
 export const ChatItem: React.FC<{
@@ -14,6 +14,7 @@ export const ChatItem: React.FC<{
 	const dispatch = useAppDispatch();
 	return (
 		<li className={style.chatitem} onClick={()=>{
+			dispatch(setChatId(number));
 			dispatch(getChatHistory({url: urlChatHistory, chatid: number}))
 		}}>
 			<button className={style.content}>

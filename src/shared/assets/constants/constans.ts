@@ -11,3 +11,5 @@ export const urlGetAuthCode = `${apiUrl}/waInstance${idInstance}/getAuthorizatio
 export const urlAvatar = `${apiUrl}/waInstance${idInstance}/getAvatar/${apiTokenInstance}`;
 
 export const urlChatHistory = `${apiUrl}/waInstance${idInstance}/getChatHistory/${apiTokenInstance}`;
+
+export const urlSendMessage = `${apiUrl}/waInstance${idInstance}/sendMessage/${apiTokenInstance}`; 

@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./sidebar.module.scss";
 import { Header } from "./ui/header/Header";
 import { ChatList } from "./ui/chatlist/ChatList";
+import style from "./sidebar.module.scss";
 
 export const SideBar: React.FC = (): React.JSX.Element => {
 	return (

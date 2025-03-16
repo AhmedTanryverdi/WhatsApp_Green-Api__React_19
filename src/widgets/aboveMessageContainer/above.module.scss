@@ -1,0 +1,24 @@
+@import '../../shared/styles/tools.scss';
+
+.above {
+	flex: 1;
+
+	.container {
+		height: 64px;
+		background-color: rgb(240, 242, 245);
+        @include flex(row, flex-start, center);
+		.avatar {
+            @include flex(row, flex-start, center);
+            margin-left: 25px;
+
+			img {
+				width: 40px;
+				height: 40px;
+			}
+
+            span{
+                margin-left: 5px;
+            }
+		}
+	}
+}
