@@ -1,0 +1,17 @@
+.item {
+	text-align: left;
+	width: 283px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+    cursor: pointer;
+
+	&:hover {
+		background-color: rgba(84, 101, 111, 0.2);
+	}
+
+	div {
+		padding-left: 24px;
+		padding-right: 54px;
+	}
+}

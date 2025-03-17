@@ -4,6 +4,12 @@
 	width: 391px;
 	max-height: 100vh;
 
+	*{
+		button{
+			outline-color: rgb(163, 192, 216);
+		}
+	}
+
 	.content {
 		padding: 0 10px 0 16px;
 		@include flex(column, flex-start, center);

@@ -1,7 +1,21 @@
-import React from 'react'
-import style from './header.module.scss';
+import React, { useRef, useState } from 'react'
+import { DropDownItem } from './ui/dropdownitem/DropDownItem';
+import style from "./header.module.scss";
+
+const dropDownList = [
+	'Новая Группа',
+	'Избранные сообщения',
+	'Выбрать чаты',
+	'Выйти'
+]
+
 
 export const Header: React.FC = (): React.JSX.Element => {
+
+
+	const [focus, setFocus] = useState(false);
+
+
   return (
 		<header className={style.header}>
 			<h1 className={style.title}>Чаты</h1>
@@ -31,7 +45,7 @@ export const Header: React.FC = (): React.JSX.Element => {
 			</button>
 
 			<div className={style.menu}>
-				<button>
+				<button onFocus={()=>setFocus(true)} onBlur={()=>setFocus(false)}>
 					<span>
 						<svg
 							viewBox="0 0 24 24"
@@ -51,6 +65,19 @@ export const Header: React.FC = (): React.JSX.Element => {
 						</svg>
 					</span>
 				</button>
+
+				{focus && (
+					<div className={style.dropDownBlock}>
+						<ul>
+							{dropDownList.map((item, index) => {
+								return <DropDownItem key={index} text={item} />;
+							})}
+						</ul>
+						<div className={style.download}>
+							<span>Установите WhatsApp для Windows</span>
+						</div>
+					</div>
+				)}
 			</div>
 		</header>
   );

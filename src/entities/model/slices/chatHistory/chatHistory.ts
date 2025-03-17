@@ -11,7 +11,6 @@ export const getChatHistory = createAsyncThunk(
 		});
 
 		if (!response.ok) {
-			console.log("error: ", response.status);
 			return [];
 		}
 
@@ -43,7 +42,6 @@ const chatHistorySlice = createSlice({
 	extraReducers: (builder) => {
 		builder.addCase(getChatHistory.fulfilled, (state, actions) => {
 			state.chat = actions.payload;
-			console.log("[chat]: ", state.chat);
 		});
 	},
 });

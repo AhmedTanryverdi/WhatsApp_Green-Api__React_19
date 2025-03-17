@@ -12,46 +12,5 @@
 		height: 100%;
 		overflow-y: auto;
 		scrollbar-width: thin;
-
-		.banner {
-			width: 480px;
-			height: 74px;
-			margin: 30px auto;
-			padding: 5px 12px 6px;
-			background-color: rgb(255, 238, 205);
-			color: rgb(84, 101, 111);
-			font-size: 12.5px;
-			@include flex(row, center, center);
-			text-align: center;
-			svg{
-				justify-items: flex-start;
-				margin-right: 5px;
-			}
-		}
-		.messageList {
-			overflow-y: auto;
-			scrollbar-width: thin;
-			.block {
-				height: calc(100vh - 62px);
-			}
-			ul {
-				@include flex(column, flex-end, flex-end);
-				row-gap: 2px;
-
-				.message {
-					width: 50%;
-					padding: 6px 7px 8px 9px;
-					flex-wrap: nowrap;
-					background-color: #d9fdd3;
-					font-size: 16px;
-					color: rgb(17, 27, 33);
-					border-radius: 7.5px;
-					font-family: "SF Pro Text", "SF Pro Ic";
-					line-height: 19px;
-					box-shadow: 0px 0px 3px rgba(11, 20, 26, 0.13);
-					margin-right: 40px;
-				}
-			}
-		}
 	}
 }
