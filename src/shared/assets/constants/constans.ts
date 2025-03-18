@@ -12,4 +12,6 @@ export const urlAvatar = `${apiUrl}/waInstance${idInstance}/getAvatar/${apiToken
 
 export const urlChatHistory = `${apiUrl}/waInstance${idInstance}/getChatHistory/${apiTokenInstance}`;
 
-export const urlSendMessage = `${apiUrl}/waInstance${idInstance}/sendMessage/${apiTokenInstance}`; 
+export const urlSendMessage = `${apiUrl}/waInstance${idInstance}/sendMessage/${apiTokenInstance}`;
+
+export const urlLogout = `${apiUrl}/waInstance${idInstance}/logout/${apiTokenInstance}/?isLogout=true`;
