@@ -21,7 +21,7 @@ export const Entry: React.FC = (): React.JSX.Element => {
 
 		const intervalId = setInterval(()=>dispatch(getStatusAuth(url)), 2500);
 		return ()=> clearInterval(intervalId);
-	}, [statusAuth]);
+	}, []);
 
 	if (statusAuth === "authorized") {
 		navigate("/main");

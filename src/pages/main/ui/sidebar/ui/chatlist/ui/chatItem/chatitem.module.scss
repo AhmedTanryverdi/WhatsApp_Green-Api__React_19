@@ -1,5 +1,14 @@
 @import "../../../../../../../../shared/styles/tools.scss";
 
+
+.wrapper{
+	@include flex(row, flex-start, center);
+	margin-left: 10px;
+	input{
+		width: 18px;
+		height: 18px;
+	}
+}
 .chatitem {
 	border-top: 1px solid rgb(59, 74, 84, 0.4);
 
@@ -29,7 +38,7 @@
 		}
 
 		.inner {
-			width: 303px;
+			flex: 1;
 			height: 72px;
 			@include flex(row, flex-start, center);
 

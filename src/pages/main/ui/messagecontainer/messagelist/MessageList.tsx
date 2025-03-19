@@ -1,10 +1,8 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../../../app/redux/store";
 import { ChatType } from "../../../../../shared/assets/types/types";
 import style from "./messagelist.module.scss";
-
-
 
 export const MessageList: React.FC = (): React.JSX.Element => {
 	const chat = useSelector<RootState, ChatType[]>((state) => state.chat.chat);
@@ -36,7 +34,9 @@ export const MessageList: React.FC = (): React.JSX.Element => {
 					{chat.map((message, index) => {
 						return (
 							<li key={index} className={style.message}>
-								<div>{message.textMessage}</div>
+								<div>
+									{message?.textMessage || message?.caption}
+								</div>
 							</li>
 						);
 					})}

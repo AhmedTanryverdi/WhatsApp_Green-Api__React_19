@@ -1,8 +1,10 @@
 import React from "react";
-import style from "./dropdownitem.module.scss";
 import { urlLogout } from "../../../../../../../../shared/assets/constants/constans";
 import { useAppDispatch } from "../../../../../../../../app/redux/store";
 import { setState } from "../../../../../../../../entities/model/slices/user/userSlice";
+import { setSelected } from "../../../../../../../../entities/model/slices/selectchat/selectchat";
+import style from "./dropdownitem.module.scss";
+
 
 export const DropDownItem: React.FC<{ text: string }> = ({
 	text,
@@ -20,6 +22,10 @@ export const DropDownItem: React.FC<{ text: string }> = ({
 					})
 					.catch((err) => console.log(err));
 				break;
+			}
+
+			case "Выбрать чаты": {
+				dispatch(setSelected(true));
 			}
 		}
 	};

@@ -36,6 +36,7 @@ export const getAuthCode = createAsyncThunk(
 );
 
 const initialState: UserType = {
+	
 	statusAuth: "",
 	auth: {
 		status: "",
