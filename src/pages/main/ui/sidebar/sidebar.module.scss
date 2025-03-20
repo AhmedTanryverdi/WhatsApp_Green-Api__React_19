@@ -1,7 +1,6 @@
 @import "../../../../shared/styles/tools.scss";
 
 .sidebar {
-	width: 391px;
 	max-height: 100vh;
 
 	*{
@@ -11,7 +10,6 @@
 	}
 
 	.content {
-		padding: 0 10px 0 16px;
-		@include flex(column, flex-start, center);
+		@include flex(row, flex-start, flex-start);
 	}
 }

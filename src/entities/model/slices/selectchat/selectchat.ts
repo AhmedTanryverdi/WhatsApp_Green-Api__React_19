@@ -5,7 +5,7 @@ const initialState: {
 	isSelected: boolean;
 } = {
 	count: 0,
-	isSelected: true,
+	isSelected: false,
 };
 
 const selectChatSlice = createSlice({

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { RootState, useAppDispatch } from "../../../../../../../../app/redux/store";
 import { setSelected } from "../../../../../../../../entities/model/slices/selectchat/selectchat";
 import style from "./counter.module.scss";
